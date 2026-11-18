@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
-    "format": "prettier --write --experimental-cli src/"
+    "preview": "npm run build && wrangler dev",
+    "format": "prettier --write --experimental-cli src/",
+    "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.5",
@@ -16,10 +17,12 @@
     "vue": "^3.5.42"
   },
   "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.70.0",
     "@vitejs/plugin-vue": "^6.0.8",
     "prettier": "3.9.6",
     "vite": "^6.2.7",
-    "vite-plugin-vue-devtools": "^7.7.10"
+    "vite-plugin-vue-devtools": "^7.7.10",
+    "wrangler": "^4.164.0"
   },
   "engines": {
     "node": "^22.18.0 || >=24.12.0"
